@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>  탬플릿 </title>
+	<meta charset="utf-8">
+</head>	
+<body>
+	<h2> th:text와  th:utext</h2>
+	<hr>
+	<ul>
+		<li>태그를 문자열출력 : <span th:text="${data}"></span></li>
+		<li>태그 해석해서 출력 : <span th:utext="${data}"></span></li>		
+	</ul>
+	<h2 inline="none"> [[....]] 와 [(....)] </h2>
+	<ul>
+		<li> th:text와 동일한 표현 : <span>[[${data}]]</span></li>
+		<li> th:utext와 동일한 표현 : <span>[(${data})]</span></li>		
+	</ul>
+	
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>  탬플릿 </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}"
+</head>	
+<body>
+	<h2> 상세보기</h2>
+	<hr>
+	<p th:text="${question.subject}"> </p>
+	<p th:text="${question.content}"></p>
+	<hr>
+	<h5 th:text="|${#lists.size(question.answerList)}개의 답변 |"></h5>
+	<div>
+		<ul>
+			<li th:each="answer:${question.answerList}"
+			    th:text="${answer.content}"></li>
+		</ul>		
+	</div>
+	<hr>
+	<span> 댓글 : </span>
+	<form method="post" th:action="@{|/answer/create/${question.id}|}">
+		<textarea name="content" id="content" rows="3" cols="60">			
+		</textarea>
+		<input type="submit" value="답변등록">		
+	</form>
+	
+</body>
+
+</html>

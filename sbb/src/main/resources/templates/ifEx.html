@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>  탬플릿 </title>
+	<meta charset="utf-8">
+</head>	
+<body>
+	<h2> if/unless </h2>
+	<hr>
+	<th:block th:if="${data !=null}">
+		<p> 메시지 : [[${data}]]</p>	
+	</th:block>
+	<th:block th:unless="${data !=null}">
+		<p>  메시지가 없습니다. </p>	
+	</th:block>
+	<hr>
+	<h2> switch </h2>
+	<th:block th:switch="${age/10}">
+		<p th:case="2">20대</p>
+		<p th:case="3">30대</p>
+	</th:block>
+	
+	
+</body>
+
+</html>

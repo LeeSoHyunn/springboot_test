@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>  탬플릿 </title>
+	<meta charset="utf-8">
+</head>	
+<body>
+	<h2> 객체정보 표현 </h2>
+	<hr>
+	<ul>
+		<li> 단순객체정보 : <span th:text="${user.username}"></span></li>
+		<li> 단순객체정보 : <span th:text="${user.getUsername()}"></span></li>
+		<li> list로 객체정보 : <span th:text="${users[0].age} "></span></li>
+		<li> map의 객체정보 : <span th:text="${usermap['userA1'].username}"></span></li>
+	
+	</ul>	
+	
+</body>
+
+</html>
