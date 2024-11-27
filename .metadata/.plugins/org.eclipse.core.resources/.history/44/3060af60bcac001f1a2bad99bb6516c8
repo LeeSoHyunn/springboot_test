@@ -1,0 +1,55 @@
+package com.mysite.sbb;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+<<<<<<< HEAD
+import org.springframework.validation.BindingResult;
+=======
+>>>>>>> 5e0656f51b5d2eb08ca95919ed471ed34413c38a
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+<<<<<<< HEAD
+import com.mysite.sbb.answer.AnswerForm;
+=======
+>>>>>>> 5e0656f51b5d2eb08ca95919ed471ed34413c38a
+import com.mysite.sbb.answer.AnswerService;
+import com.mysite.sbb.question.Question;
+import com.mysite.sbb.question.QuestionService;
+
+<<<<<<< HEAD
+import jakarta.validation.Valid;
+=======
+>>>>>>> 5e0656f51b5d2eb08ca95919ed471ed34413c38a
+import lombok.RequiredArgsConstructor;
+@Controller
+@RequiredArgsConstructor
+public class AnswerController {
+	
+	private final QuestionService questionService;
+	private final AnswerService answerService;
+	
+	@PostMapping("/answer/create/{id}")
+	public String createAnswer(Model model, 
+			@PathVariable("id") Integer id,
+<<<<<<< HEAD
+			@Valid AnswerForm answerForm, BindingResult bindingResult) {
+		Question question= this.questionService.getQuestion(id);
+		
+		if(bindingResult.hasErrors()) {
+			model.addAttribute("question", question);
+			return "question_detail";
+		}
+		
+		//답변에 코드추가
+		this.answerService.create(question, answerForm.getContent());		
+=======
+			@RequestParam("content") String content) {
+		Question question= this.questionService.getQuestion(id);
+		//답변에 코드추가
+		this.answerService.create(question, content);		
+>>>>>>> 5e0656f51b5d2eb08ca95919ed471ed34413c38a
+		return String.format("redirect:/question/detail/%s", id);
+	}
+}
