@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>  탬플릿 </title>
+	<meta charset="utf-8">
+</head>	
+<body>
+	<h2> each</h2>
+	<hr>
+	<table border="1">
+		<tr><th> 이름</th><th>나이</th> <th>주소</th></tr>
+		<th:block th:each="item:${dList}">
+			<tr>
+				<td th:text="${item.name}"></td>
+				<td th:text="${item.age}"></td>
+				<td th:text="${item.address}"></td>			
+			</tr>
+					
+		</th:block>
+		
+		
+	</table>
+
+</body>
+
+</html>
